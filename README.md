@@ -77,33 +77,33 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 `XMPPHandle` handle most of the cases required to
 
 1. Shared instance
-```Objective-C
-+ (XMPPHandler *)defaultXMPPHandler;
-```
-        
-2. Setup and Clear XMPP Stream 
-```Objective-C
--(void)setupXMPPStream;
--(void)clearXMPPStream;
-```
+    ```Objective-C
+    + (XMPPHandler *)defaultXMPPHandler;
+    ```
+    
+etup and Clear XMPP Stream 
+    ```Objective-C
+    -(void)setupXMPPStream;
+    -(void)clearXMPPStream;
+    ```
         
 3. Connect and Disconnect with XMPP Server
-```Objective-C
-- (BOOL)connectToXMPPServer;
-- (void)disconnectFromXMPPServer;
-```
+    ```Objective-C
+    - (BOOL)connectToXMPPServer;
+    - (void)disconnectFromXMPPServer;
+    ```
         
 4. Register new user
-```Objective-C
-- (void)registerUser; 
-``` 
+    ```Objective-C
+    - (void)registerUser; 
+    ``` 
 5. Set user status
 
     1. MyStatusAvailable
     2. MyStatusUnavailable 
-```Objective-C    
-- (void)setMyStatus:(MyStatus)myStatus;
-``` 
+    ```Objective-C    
+    - (void)setMyStatus:(MyStatus)myStatus;
+    ``` 
            
 6. Set chat state for friend
 
@@ -113,36 +113,36 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
     4. ChatStateInactive
     5. ChatStateGone
 
-```Objective-C    
-- (void)setChatState:(ChatState)chatState forFriendWithFriendId:(NSString *)friendId;
-```
+    ```Objective-C    
+    - (void)setChatState:(ChatState)chatState forFriendWithFriendId:(NSString *)friendId;
+    ```
                 
 7. Send messages to friend
-```Objective-C
-- (void)sendMessage:(NSString *)message toFriendWithFriendId:(NSString *)friendId andMessageId:(NSString *)messageId;
-```
+    ```Objective-C
+    - (void)sendMessage:(NSString *)message toFriendWithFriendId:(NSString *)friendId andMessageId:(NSString *)messageId;
+    ```
 8. Add/Remove friend
-```Objective-C
-- (void)removeFriendWithFriendId:(NSString *)friendId;
-- (void)addFriendWithFriendId:(NSString *)friendId andFriendNickName:(NSString *)nickName;
-```
+    ```Objective-C
+    - (void)removeFriendWithFriendId:(NSString *)friendId;
+    - (void)addFriendWithFriendId:(NSString *)friendId andFriendNickName:(NSString *)nickName;
+    ```
         
 9. Block/Unblock friend
-```Objective-C
-- (void)blockFriendWithFriendId:(NSString *)friendId;
-- (void)unblockFriendWithFriendId:(NSString *)friendId;
-```
+    ```Objective-C
+    - (void)blockFriendWithFriendId:(NSString *)friendId;
+    - (void)unblockFriendWithFriendId:(NSString *)friendId;
+    ```
         
 10. Accept/Reject Presence Subscription Request
-```Objective-C
-- (void)rejectPresenceSubscriptionForFriendWithFriendId:(NSString *)friendId;
-- (void)acceptPresenceSubscriptionRequestForFriendWithFriendId:(NSString *)friendId andAddToRoster:(BOOL)addToRoster;
-```
+    ```Objective-C
+    - (void)rejectPresenceSubscriptionForFriendWithFriendId:(NSString *)friendId;
+    - (void)acceptPresenceSubscriptionRequestForFriendWithFriendId:(NSString *)friendId andAddToRoster:(BOOL)addToRoster;
+    ```
         
 11. Get last active of friend (via I/Q)
-```Objective-C
-- (void)getLastActivityForFriendWithFriendId:(NSString *)friendId;
-```
+    ```Objective-C
+    - (void)getLastActivityForFriendWithFriendId:(NSString *)friendId;
+    ```
         
 
 
@@ -151,18 +151,19 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 #### Methods
 
 1. Shared instance
-```Objective-C
-+ (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
-```
+    ```Objective-C
+    + (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
+    ```
 
 #### Required Changes
 You can modify this file based on your requirent. `XMPPCoreDataHandler.m` file contanis some `TODO` list. Please change based on your requirement or `CoreData` model.
 
 #### XMPPCoreDataHandler Example
+    ```Objective-C
     XMPPCoreDataHandler *xmppCoreDataHandler = [XMPPCoreDataHandler defaultXMPPCoreDataHandler];
     //Now call overide method of `XMPPHandler` class to process CoreData query before calling `XMPPHandler` (Super Class of `XMPPCoreDataHandler`) methods 
     [xmppCoreDataHandler setChatState:ChatStateActive forFriendWithFriendId:friendId];
- 
+    ```
  
 ## LICENSE
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
