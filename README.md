@@ -70,6 +70,7 @@ of XMPP extensions.
  
 ## Methods
 `XMPPHandle` handle most of the cases required to
+
 1. Shared instance
 
         + (XMPPHandler *)defaultXMPPHandler;
@@ -133,6 +134,7 @@ of XMPP extensions.
 #XMPPCoreDataHandler Usage
 `XMPPCoreDataHandler` have observer for all notification and overide method for storing all XMPP activity in easy way. You can modify this file based on your requirent.
 ## Methods
+
 1. Shared instance
 
         + (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
