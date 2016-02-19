@@ -10,21 +10,22 @@ of XMPP extensions.
 ## XMPPHandler Usage
 `XMPPHandler` contains all method for communicating with XMPP Server in easy way. You don't need to modify this file.
 #### XMPPHandler Examples
-    XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
-    [xmppHandler setHostName:`YOUR_HOST_IP/URL`];
-    [xmppHandler setHostPort:[NSNumber numberWithInt:`YOUR_HOST_PORT`]];
-    [xmppHandler setUserId:`USER_ID`];
-    [xmppHandler setUserPassword:`USER_PASSWORD`];
-    [xmppHandler setShowErrorAlertView:YES];
-    [xmppHandler connectToXMPPServer]; //Connect to server
-    [xmppHandler registerUser]; //Register user (You can send register user request multiple time)
-    
+```
+XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
+[xmppHandler setHostName:`YOUR_HOST_IP/URL`];
+[xmppHandler setHostPort:[NSNumber numberWithInt:`YOUR_HOST_PORT`]];
+[xmppHandler setUserId:`USER_ID`];
+[xmppHandler setUserPassword:`USER_PASSWORD`];
+[xmppHandler setShowErrorAlertView:YES];
+[xmppHandler connectToXMPPServer]; //Connect to server
+[xmppHandler registerUser]; //Register user (You can send register user request multiple time)
+```    
 #### Properties 
 1. User details
-
-        @property (nonatomic, strong) NSString *userId;
-        @property (nonatomic, strong) NSString *userPassword;
-
+```
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSString *userPassword;
+```
 2. XMPPHost details
 
         @property (nonatomic, strong) NSString *hostName;
