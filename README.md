@@ -22,25 +22,32 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 ```    
 #### Properties 
 1. User details
-```Objective-C
-@property (nonatomic, strong) NSString *userId;
-@property (nonatomic, strong) NSString *userPassword;
-```
+
+    ```Objective-C
+    @property (nonatomic, strong) NSString *userId;
+    @property (nonatomic, strong) NSString *userPassword;
+    ```
+
 2. XMPPHost details
-```Objective-C
-@property (nonatomic, strong) NSString *hostName;
-@property (nonatomic, strong) NSNumber *hostPort;
-@property (nonatomic, assign) BOOL allowSSLHostNameMismatch;
-@property (nonatomic, assign) BOOL allowSelfSignedCertificates;
-```
+
+    ```Objective-C
+    @property (nonatomic, strong) NSString *hostName;
+    @property (nonatomic, strong) NSNumber *hostPort;
+    @property (nonatomic, assign) BOOL allowSSLHostNameMismatch;
+    @property (nonatomic, assign) BOOL allowSelfSignedCertificates;
+    ```
+
 3. XMPPHandler Configuration
-```Objective-C
-@property (nonatomic, assign) BOOL showErrorAlertView;
-```
+
+    ```Objective-C
+    @property (nonatomic, assign) BOOL showErrorAlertView;
+    ```
+
 4. XMPP ReadOnly Details
-```Objective-C
-@property (nonatomic, assign, readonly) BOOL isConnectedToXMPPServer;
-```        
+
+    ```Objective-C
+    @property (nonatomic, assign, readonly) BOOL isConnectedToXMPPServer;
+    ```        
         
 #### Notification
 ##### XMPP Stream Notification
@@ -77,30 +84,36 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 `XMPPHandle` handle most of the cases required to
 
 1. Shared instance
+
     ```Objective-C
     + (XMPPHandler *)defaultXMPPHandler;
     ```
     
-etup and Clear XMPP Stream 
+2. Setup and Clear XMPP Stream
+ 
     ```Objective-C
     -(void)setupXMPPStream;
     -(void)clearXMPPStream;
     ```
         
 3. Connect and Disconnect with XMPP Server
+
     ```Objective-C
     - (BOOL)connectToXMPPServer;
     - (void)disconnectFromXMPPServer;
     ```
         
 4. Register new user
+
     ```Objective-C
     - (void)registerUser; 
     ``` 
+    
 5. Set user status
 
     1. MyStatusAvailable
     2. MyStatusUnavailable 
+    
     ```Objective-C    
     - (void)setMyStatus:(MyStatus)myStatus;
     ``` 
@@ -118,28 +131,34 @@ etup and Clear XMPP Stream
     ```
                 
 7. Send messages to friend
+
     ```Objective-C
     - (void)sendMessage:(NSString *)message toFriendWithFriendId:(NSString *)friendId andMessageId:(NSString *)messageId;
     ```
+    
 8. Add/Remove friend
+
     ```Objective-C
     - (void)removeFriendWithFriendId:(NSString *)friendId;
     - (void)addFriendWithFriendId:(NSString *)friendId andFriendNickName:(NSString *)nickName;
     ```
         
 9. Block/Unblock friend
+
     ```Objective-C
     - (void)blockFriendWithFriendId:(NSString *)friendId;
     - (void)unblockFriendWithFriendId:(NSString *)friendId;
     ```
         
 10. Accept/Reject Presence Subscription Request
+
     ```Objective-C
     - (void)rejectPresenceSubscriptionForFriendWithFriendId:(NSString *)friendId;
     - (void)acceptPresenceSubscriptionRequestForFriendWithFriendId:(NSString *)friendId andAddToRoster:(BOOL)addToRoster;
     ```
         
 11. Get last active of friend (via I/Q)
+
     ```Objective-C
     - (void)getLastActivityForFriendWithFriendId:(NSString *)friendId;
     ```
@@ -151,6 +170,7 @@ etup and Clear XMPP Stream
 #### Methods
 
 1. Shared instance
+
     ```Objective-C
     + (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
     ```
@@ -159,6 +179,7 @@ etup and Clear XMPP Stream
 You can modify this file based on your requirent. `XMPPCoreDataHandler.m` file contanis some `TODO` list. Please change based on your requirement or `CoreData` model.
 
 #### XMPPCoreDataHandler Example
+
     ```Objective-C
     XMPPCoreDataHandler *xmppCoreDataHandler = [XMPPCoreDataHandler defaultXMPPCoreDataHandler];
     //Now call overide method of `XMPPHandler` class to process CoreData query before calling `XMPPHandler` (Super Class of `XMPPCoreDataHandler`) methods 
