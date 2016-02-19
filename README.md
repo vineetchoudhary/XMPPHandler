@@ -9,7 +9,7 @@ of XMPP extensions.
 
 ## XMPPHandler Usage
 `XMPPHandler` contains all method for communicating with XMPP Server in easy way. You don't need to modify this file.
-### XMPPHandler Examples
+#### XMPPHandler Examples
     XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
     [xmppHandler setHostName:`YOUR_HOST_IP/URL`];
     [xmppHandler setHostPort:[NSNumber numberWithInt:`YOUR_HOST_PORT`]];
@@ -19,7 +19,7 @@ of XMPP extensions.
     [xmppHandler connectToXMPPServer]; //Connect to server
     [xmppHandler registerUser]; //Register user (You can send register user request multiple time)
     
-### Properties 
+#### Properties 
 1. User details
 
         @property (nonatomic, strong) NSString *userId;
@@ -41,8 +41,8 @@ of XMPP extensions.
         @property (nonatomic, assign, readonly) BOOL isConnectedToXMPPServer;
         
         
-### Notification
-#### XMPP Stream Notification
+#### Notification
+##### XMPP Stream Notification
 1. `XMPPStreamDidRegister` - XMPP Stream successfully register
 2. `XMPPStreamDidNotRegister` - XMPP Stream failed to register
 3. `XMPPStreamWillSecureWithSettings` - XMPP Stream will overide with your security settings
@@ -59,12 +59,12 @@ of XMPP extensions.
 14. `XMPPStreamDidReceiveMessage` - XMPP Stream received message
 15. `XMPPStreamDidReceivePresence` - XMPP Stream received Presence
 
-#### XMPP Roster Notification
+##### XMPP Roster Notification
 1. `XMPPRosterDidReceivePresenceSubscriptionRequest` - XMPP Roster received presence subscription request
 2. `XMPPRosterDidReceiveRosterItem` - XMPP Roster received roster item
 3. `XMPPRosterDidReceiveRosterPush` - XMPP Roster received roster push
 
-#### XMPP Reconnect Notification
+##### XMPP Reconnect Notification
 1. `XMPPReconnectShouldAttemptAutoReconnect` - XMPP trying to auto-reconnect with server
 
 #### XMPP Constant Identifier 
@@ -72,7 +72,7 @@ of XMPP extensions.
 2. `XMPPActiveDuringOfflienMessageId` - Friend activity during offlien period (Message Identifier)
 
  
-### Methods
+#### Methods
 `XMPPHandle` handle most of the cases required to
 
 1. Shared instance
@@ -138,16 +138,16 @@ of XMPP extensions.
 
 ## XMPPCoreDataHandler Usage
 `XMPPCoreDataHandler` have observer for all notification and overide method for storing all XMPP activity in easy way. You can modify this file based on your requirent.
-### Methods
+#### Methods
 
 1. Shared instance
 
         + (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
 
-### Required Changes
+#### Required Changes
 You can modify this file based on your requirent. `XMPPCoreDataHandler.m` file contanis some `TODO` list. Please change based on your requirement or `CoreData` model.
 
-### XMPPCoreDataHandler Example
+#### XMPPCoreDataHandler Example
     XMPPCoreDataHandler *xmppCoreDataHandler = [XMPPCoreDataHandler defaultXMPPCoreDataHandler];
     //Now call overide method of `XMPPHandler` class to process CoreData query before calling `XMPPHandler` (Super Class of `XMPPCoreDataHandler`) methods 
     [xmppCoreDataHandler setChatState:ChatStateActive forFriendWithFriendId:friendId];
