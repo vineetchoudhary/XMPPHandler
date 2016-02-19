@@ -71,38 +71,61 @@ of XMPP extensions.
 ## Methods
 `XMPPHandle` handle most of the cases required to
 1. Shared instance
+
         + (XMPPHandler *)defaultXMPPHandler;
+        
 2. Setup and Clear XMPP Stream 
+
         -(void)setupXMPPStream;
 	    -(void)clearXMPPStream;
+        
 3. Connect and Disconnect with XMPP Server
+
         - (BOOL)connectToXMPPServer;
 	    - (void)disconnectFromXMPPServer;
+        
 4. Register new user
+
 	   - (void)registerUser; 
+       
 5. Set user status
+
     1. MyStatusAvailable
     2. MyStatusUnavailable 
+    
     	   - (void)setMyStatus:(MyStatus)myStatus; 
+           
 6. Set chat state for friend
+
     1. ChatStateActive
     2. ChatStateComposing
     3. ChatStatePaused
     4. ChatStateInactive
     5. ChatStateGone
+    
         	    - (void)setChatState:(ChatState)chatState forFriendWithFriendId:(NSString *)friendId;
+                
 7. Send messages to friend
+
         - (void)sendMessage:(NSString *)message toFriendWithFriendId:(NSString *)friendId andMessageId:(NSString *)messageId;
+
 8. Add/Remove friend
+
         - (void)removeFriendWithFriendId:(NSString *)friendId;
 	    - (void)addFriendWithFriendId:(NSString *)friendId andFriendNickName:(NSString *)nickName;
+        
 9. Block/Unblock friend
+
         - (void)blockFriendWithFriendId:(NSString *)friendId;
         - (void)unblockFriendWithFriendId:(NSString *)friendId;
+        
 10. Accept/Reject Presence Subscription Request
+
         - (void)rejectPresenceSubscriptionForFriendWithFriendId:(NSString *)friendId;
 	    - (void)acceptPresenceSubscriptionRequestForFriendWithFriendId:(NSString *)friendId andAddToRoster:(BOOL)addToRoster;
+        
 11. Get last active of friend (via I/Q)
+
         - (void)getLastActivityForFriendWithFriendId:(NSString *)friendId;
         
 
@@ -111,6 +134,7 @@ of XMPP extensions.
 `XMPPCoreDataHandler` have observer for all notification and overide method for storing all XMPP activity in easy way. You can modify this file based on your requirent.
 ## Methods
 1. Shared instance
+
         + (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
 
 ## Required Changes
