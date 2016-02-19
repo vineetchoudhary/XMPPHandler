@@ -180,11 +180,11 @@ You can modify this file based on your requirent. `XMPPCoreDataHandler.m` file c
 
 #### XMPPCoreDataHandler Example
 
-    ```Objective-C
-    XMPPCoreDataHandler *xmppCoreDataHandler = [XMPPCoreDataHandler defaultXMPPCoreDataHandler];
-    //Now call overide method of `XMPPHandler` class to process CoreData query before calling `XMPPHandler` (Super Class of `XMPPCoreDataHandler`) methods 
-    [xmppCoreDataHandler setChatState:ChatStateActive forFriendWithFriendId:friendId];
-    ```
+```Objective-C
+XMPPCoreDataHandler *xmppCoreDataHandler = [XMPPCoreDataHandler defaultXMPPCoreDataHandler];
+//Now call overide method of `XMPPHandler` class to process CoreData query before calling `XMPPHandler` (Super Class of `XMPPCoreDataHandler`) methods inside overide method 
+[xmppCoreDataHandler setChatState:ChatStateActive forFriendWithFriendId:friendId];
+```
  
 ## LICENSE
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
