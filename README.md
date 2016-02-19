@@ -10,7 +10,7 @@ of XMPP extensions.
 ## XMPPHandler Usage
 `XMPPHandler` contains all method for communicating with XMPP Server in easy way. You don't need to modify this file.
 #### XMPPHandler Examples
-```
+```Objective-C
 XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 [xmppHandler setHostName:`YOUR_HOST_IP/URL`];
 [xmppHandler setHostPort:[NSNumber numberWithInt:`YOUR_HOST_PORT`]];
