@@ -1,5 +1,5 @@
 ## XMPPHandler
-`XMPPHandler` is a wrapper of `XMPP Framework` which contains an easy-to-use and well-documented `Objective-C` class for communicating with an XMPP server with CoreData extension support. It supports basic Instant Messaging and Presence funtionality as well as a variety of XMPP extensions.
+`XMPPHandler` is a wrapper of `XMPP Framework` which contains an easy-to-use and well-documented `Objective-C` class for communicating with an XMPP server with CoreData extension support. It supports basic Instant Messaging and Presence functionality as well as a variety of XMPP extensions.
 
 ## DEPENDENCY
 1. XMPP Framework 3.6.6 (https://github.com/processone/XMPPFramework)
