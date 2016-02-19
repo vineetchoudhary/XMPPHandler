@@ -21,19 +21,23 @@ of XMPP extensions.
     
 ### Properties 
 1. User details
+
         @property (nonatomic, strong) NSString *userId;
         @property (nonatomic, strong) NSString *userPassword;
 
 2. XMPPHost details
+
         @property (nonatomic, strong) NSString *hostName;
         @property (nonatomic, strong) NSNumber *hostPort;
         @property (nonatomic, assign) BOOL allowSSLHostNameMismatch;
         @property (nonatomic, assign) BOOL allowSelfSignedCertificates;
 
 3. XMPPHandler Configuration
+
         @property (nonatomic, assign) BOOL showErrorAlertView;
 
 4. XMPP ReadOnly Details
+
         @property (nonatomic, assign, readonly) BOOL isConnectedToXMPPServer;
         
         
@@ -87,14 +91,14 @@ of XMPP extensions.
         
 4. Register new user
 
-	   - (void)registerUser; 
+	   	    - (void)registerUser; 
        
 5. Set user status
 
     1. MyStatusAvailable
     2. MyStatusUnavailable 
     
-    	   - (void)setMyStatus:(MyStatus)myStatus; 
+    	       - (void)setMyStatus:(MyStatus)myStatus; 
            
 6. Set chat state for friend
 
@@ -103,6 +107,7 @@ of XMPP extensions.
     3. ChatStatePaused
     4. ChatStateInactive
     5. ChatStateGone
+    
     
         	    - (void)setChatState:(ChatState)chatState forFriendWithFriendId:(NSString *)friendId;
                 
