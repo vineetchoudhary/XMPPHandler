@@ -22,25 +22,25 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 ```    
 #### Properties 
 1. User details
-```
+```Objective-C
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *userPassword;
 ```
 2. XMPPHost details
-
-        @property (nonatomic, strong) NSString *hostName;
-        @property (nonatomic, strong) NSNumber *hostPort;
-        @property (nonatomic, assign) BOOL allowSSLHostNameMismatch;
-        @property (nonatomic, assign) BOOL allowSelfSignedCertificates;
-
+```Objective-C
+@property (nonatomic, strong) NSString *hostName;
+@property (nonatomic, strong) NSNumber *hostPort;
+@property (nonatomic, assign) BOOL allowSSLHostNameMismatch;
+@property (nonatomic, assign) BOOL allowSelfSignedCertificates;
+```
 3. XMPPHandler Configuration
-
-        @property (nonatomic, assign) BOOL showErrorAlertView;
-
+```Objective-C
+@property (nonatomic, assign) BOOL showErrorAlertView;
+```
 4. XMPP ReadOnly Details
-
-        @property (nonatomic, assign, readonly) BOOL isConnectedToXMPPServer;
-        
+```Objective-C
+@property (nonatomic, assign, readonly) BOOL isConnectedToXMPPServer;
+```        
         
 #### Notification
 ##### XMPP Stream Notification
@@ -77,29 +77,33 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 `XMPPHandle` handle most of the cases required to
 
 1. Shared instance
-
-        + (XMPPHandler *)defaultXMPPHandler;
+```Objective-C
++ (XMPPHandler *)defaultXMPPHandler;
+```
         
 2. Setup and Clear XMPP Stream 
-
-        -(void)setupXMPPStream;
-	    -(void)clearXMPPStream;
+```Objective-C
+-(void)setupXMPPStream;
+-(void)clearXMPPStream;
+```
         
 3. Connect and Disconnect with XMPP Server
-
-        - (BOOL)connectToXMPPServer;
-	    - (void)disconnectFromXMPPServer;
+```Objective-C
+- (BOOL)connectToXMPPServer;
+- (void)disconnectFromXMPPServer;
+```
         
 4. Register new user
-
-	   	    - (void)registerUser; 
-       
+```Objective-C
+- (void)registerUser; 
+``` 
 5. Set user status
 
     1. MyStatusAvailable
     2. MyStatusUnavailable 
-    
-    	       - (void)setMyStatus:(MyStatus)myStatus; 
+```Objective-C    
+- (void)setMyStatus:(MyStatus)myStatus;
+``` 
            
 6. Set chat state for friend
 
@@ -108,32 +112,37 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
     3. ChatStatePaused
     4. ChatStateInactive
     5. ChatStateGone
-    
-    
-        	    - (void)setChatState:(ChatState)chatState forFriendWithFriendId:(NSString *)friendId;
+
+```Objective-C    
+- (void)setChatState:(ChatState)chatState forFriendWithFriendId:(NSString *)friendId;
+```
                 
 7. Send messages to friend
-
-        - (void)sendMessage:(NSString *)message toFriendWithFriendId:(NSString *)friendId andMessageId:(NSString *)messageId;
-
+```Objective-C
+- (void)sendMessage:(NSString *)message toFriendWithFriendId:(NSString *)friendId andMessageId:(NSString *)messageId;
+```
 8. Add/Remove friend
-
-        - (void)removeFriendWithFriendId:(NSString *)friendId;
-	    - (void)addFriendWithFriendId:(NSString *)friendId andFriendNickName:(NSString *)nickName;
+```Objective-C
+- (void)removeFriendWithFriendId:(NSString *)friendId;
+- (void)addFriendWithFriendId:(NSString *)friendId andFriendNickName:(NSString *)nickName;
+```
         
 9. Block/Unblock friend
-
-        - (void)blockFriendWithFriendId:(NSString *)friendId;
-        - (void)unblockFriendWithFriendId:(NSString *)friendId;
+```Objective-C
+- (void)blockFriendWithFriendId:(NSString *)friendId;
+- (void)unblockFriendWithFriendId:(NSString *)friendId;
+```
         
 10. Accept/Reject Presence Subscription Request
-
-        - (void)rejectPresenceSubscriptionForFriendWithFriendId:(NSString *)friendId;
-	    - (void)acceptPresenceSubscriptionRequestForFriendWithFriendId:(NSString *)friendId andAddToRoster:(BOOL)addToRoster;
+```Objective-C
+- (void)rejectPresenceSubscriptionForFriendWithFriendId:(NSString *)friendId;
+- (void)acceptPresenceSubscriptionRequestForFriendWithFriendId:(NSString *)friendId andAddToRoster:(BOOL)addToRoster;
+```
         
 11. Get last active of friend (via I/Q)
-
-        - (void)getLastActivityForFriendWithFriendId:(NSString *)friendId;
+```Objective-C
+- (void)getLastActivityForFriendWithFriendId:(NSString *)friendId;
+```
         
 
 
@@ -142,8 +151,9 @@ XMPPHandler *xmppHandler = [XMPPHandler defaultXMPPHandler];
 #### Methods
 
 1. Shared instance
-
-        + (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
+```Objective-C
++ (XMPPCoreDataHandler *)defaultXMPPCoreDataHandler;
+```
 
 #### Required Changes
 You can modify this file based on your requirent. `XMPPCoreDataHandler.m` file contanis some `TODO` list. Please change based on your requirement or `CoreData` model.
